@@ -1,0 +1,211 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --756F6E-color : #756F6E; 
+    --primary-color : #EE4D2D ;
+    --border-color : #dbdbdb;
+    --xam-color : #777; 
+    --star-gold-color:  #ffce3d ;
+    --navbar--height : 52px;
+    --header--height : 120px;
+    --header-with-search-height : calc(var(--header--height) - var(--navbar--height));
+    --focus-indicator-color: rgba(0,0,0,0.87);
+    --focus-indicator-spacing: 4px;
+    --focus-indicator-stroke-width: 2px;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    /* 16px */
+    font-size:  62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto' , sans-serif;
+    box-sizing: border-box;
+}
+/* Bên file grid.css */
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width{
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes headerNotifyGrowth {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes Growth {
+    from {
+        transform: scale(var(--growth-form));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+Modal */
+.modal {
+    position: fixed;
+    top : 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    background-color: rgba( 0, 0, 0, 0.2 );
+    animation: fadeIn linear 0.1s;
+    justify-content: center;
+    align-items: center;
+} 
+
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.modal__body{
+    --growth-form : 0.7 ;
+    --growth-to : 1;
+    position: relative;
+    background-color: var(--white-color);
+    margin: auto;
+    z-index: 1;
+    border-radius: 5px;
+    animation: Growth linear 0.1s;
+    
+}
+
+.btn{
+    min-width: 142px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.6rem;
+    background-color: var(--white-color);
+
+}
+
+.btn--normal:hover{
+    background-color: rgba( 0, 0, 0, 0.1 );
+}
+
+.btn.btn--primary {
+    color: var(--white-color);
+    background-color:  var(--primary-color);
+}
+
+
+.btn--disabled{
+    color: #949494;
+    cursor: default;
+    background-color: #999;
+}
+
+.btn--size-s{
+    height: 36px;
+    font-size: 1.2rem;
+    
+}
+/* p {
+    1 rem = 10px
+    font-size: 1.6rem;
+} */
+
+/* Selection mục Giá*/
+.select-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 200px;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+}
+
+.select-input__list{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% - 8px);
+    border-radius: 2px;
+    background-color: var(--white-color);
+    padding-left: 0;
+    padding: 10px 14px;
+    list-style: none;
+    display: none;
+    z-index: 1;
+
+}
+
+.select-input__item{
+    padding: 10px 4px;
+}
+
+.select-input__link:hover{
+    color: var(--primary-color);
+}
+
+.select-input__link{
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var( --text-color);
+    padding: 4px 0;
+}
+
+.select-input:hover .select-input__list {
+    display: block;
+}
+
+.select-input__label{
+    font-size: 1.4rem;
+}
+
+.select-input-icon{
+    font-size: 1.8rem;
+    color: rgb(131, 131, 131);
+    margin: 0 2px 0 8px;
+    position: relative;
+    top: 1px;
+}
+
